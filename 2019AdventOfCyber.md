@@ -1,6 +1,6 @@
 # Advent of Cyber
 
-The link to the room can be found [here] (https://tryhackme.com/room/25daysofchristmas). This writeup contains the solutions of the 2019 advent event on TryHackMe.
+The link to the room can be found [here](https://tryhackme.com/room/25daysofchristmas). This writeup contains the solutions of the 2019 advent event on TryHackMe.
 
 ### Day 1: Inventory Management
 ### Day 2: Arctic Forum
