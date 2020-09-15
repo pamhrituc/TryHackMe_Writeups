@@ -71,7 +71,7 @@ To complete this task, the machine needs to be deployed.
 
    `nmap -sS`
 
-   - The full command is the following: `nmap -sS 10.10.201.225`, where 10.10.201.225 is the IP address of the deployed machine.
+   The full command is the following: `nmap -sS 10.10.201.225`, where 10.10.201.225 is the IP address of the deployed machine.
 
 2. After scanning this, how many ports do we find open under 1000?
 
