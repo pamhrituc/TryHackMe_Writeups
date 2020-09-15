@@ -7,7 +7,7 @@ The answers to this task can be found by reading the help menu for nmap. This ca
 
 1. First, how do you access the help menu?
 
-   `-h`
+   > -h
 
 2. Often referred to as stealth scan, what is the first switch listed for a 'Syn Scan'?
 
