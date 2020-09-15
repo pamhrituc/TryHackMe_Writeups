@@ -1,5 +1,7 @@
 # Nmap
 
+The room for this walkthrough/writeup can be found [here](https://tryhackme.com/room/rpnmap)
+
 ### Task 1
 The answers to this task can be found by reading the help menu for nmap. This can be accessed by using `man nmap` for the manual pages or `nmap -h` for the help menu.
 
