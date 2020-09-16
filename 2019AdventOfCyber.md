@@ -22,7 +22,7 @@ First things first. We need to start Metasploit. Either you're using Kali and Me
 
 Once it's installed on your system, the `msfconsole` command will start the Metasploit Framework console interface.
 
-The first thing I've done was use nmap to scan the machine for services said machine runs and the services. [Scan results](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/2019AdventOfCyber/nmap_scan_results/day10_metasploit.log)
+The first thing I've done was use nmap to scan the machine for services said machine runs and the services. [Scan results](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/2019AdventOfCyber/nmap_scan_results/day10_metaploit.log)
 
 The service that is of interest to us is Apache-Coyote 1.1. After doing some research, the vulnerability we're interested in is [CVE-2017-5638](https://www.exploit-db.com/exploits/41614).
 
