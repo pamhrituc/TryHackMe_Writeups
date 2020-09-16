@@ -1,0 +1,45 @@
+# Nmap 7.80 scan initiated Wed Sep 16 12:05:05 2020 as: nmap -A -oN aggressive_scan.log 10.10.7.229
+Nmap scan report for 10.10.7.229
+Host is up (0.23s latency).
+Not shown: 998 closed ports
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.10 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   1024 4c:9b:47:e8:c5:83:85:53:5c:8d:ee:09:c3:87:09:1c (DSA)
+|   2048 05:d0:60:64:00:d8:8d:01:01:9b:51:40:bf:f3:27:87 (RSA)
+|   256 d9:99:e4:87:c7:72:bd:0b:9d:95:9f:f0:1d:f4:c2:32 (ECDSA)
+|_  256 b0:d5:b5:4d:03:29:05:60:48:95:9b:b6:19:87:d0:7c (ED25519)
+80/tcp open  http    Apache httpd 2.4.7 ((Ubuntu))
+| http-cookie-flags: 
+|   /: 
+|     PHPSESSID: 
+|_      httponly flag not set
+| http-robots.txt: 1 disallowed entry 
+|_/
+|_http-server-header: Apache/2.4.7 (Ubuntu)
+| http-title: Login :: Damn Vulnerable Web Application (DVWA) v1.10 *Develop...
+|_Requested resource was login.php
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.80%E=4%D=9/16%OT=22%CT=1%CU=43906%PV=Y%DS=4%DC=T%G=Y%TM=5F61D57
+OS:6%P=x86_64-pc-linux-gnu)SEQ(SP=F5%GCD=1%ISR=103%TI=Z%CI=I%II=I%TS=8)OPS(
+OS:O1=M509ST11NW6%O2=M509ST11NW6%O3=M509NNT11NW6%O4=M509ST11NW6%O5=M509ST11
+OS:NW6%O6=M509ST11)WIN(W1=68DF%W2=68DF%W3=68DF%W4=68DF%W5=68DF%W6=68DF)ECN(
+OS:R=Y%DF=Y%T=40%W=6903%O=M509NNSNW6%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS
+OS:%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=
+OS:Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=
+OS:R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T
+OS:=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=
+OS:S)
+
+Network Distance: 4 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 587/tcp)
+HOP RTT       ADDRESS
+1   164.34 ms 10.6.0.1
+2   ... 3
+4   234.00 ms 10.10.7.229
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Sep 16 12:05:58 2020 -- 1 IP address (1 host up) scanned in 54.09 seconds

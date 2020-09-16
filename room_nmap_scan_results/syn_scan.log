@@ -1,0 +1,9 @@
+# Nmap 7.80 scan initiated Wed Sep 16 12:02:17 2020 as: nmap -sS -oN syn_scan.log 10.10.7.229
+Nmap scan report for 10.10.7.229
+Host is up (0.23s latency).
+Not shown: 998 closed ports
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+# Nmap done at Wed Sep 16 12:02:34 2020 -- 1 IP address (1 host up) scanned in 16.99 seconds

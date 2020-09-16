@@ -67,13 +67,13 @@ The answers to this task can be found by reading the help menu for nmap. This ca
 
 
 ### Task 2
-To complete this task, the machine needs to be deployed.
+To complete this task, the machine needs to be deployed. The files containing the Nmap scan results are [here](https://github.com/pamhrituc/TryHackMe_Writeups/tree/master/room_nmap_scan_results)
 
 1. Let's go ahead and start with the basics and perform a syn scan on the box provided. What will this command be **without** the host IP address?
 
    > nmap -sS
 
-   The full command is the following: `nmap -sS 10.10.201.225`, where 10.10.201.225 is the IP address of the deployed machine.
+   The full command is the following: `nmap -sS 10.10.7.229`, where 10.10.7.229 is the IP address of the deployed machine. [Scan results](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/room_nmap_scan_results/syn_scan.log)
 
 2. After scanning this, how many ports do we find open under 1000?
 
@@ -87,16 +87,16 @@ To complete this task, the machine needs to be deployed.
 
    > 6.6.1p1
 
-   The command to perform the service version detection scan is: `nmap -sV 10.10.201.225`.
+   The command to perform the service version detection scan is: `nmap -sV 10.10.7.229`. [Scan results](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/room_nmap_scan_results/service_version_detection.log)
 
 5. Perform an aggressive scan, what flag isn't set under the results for port 80?
 
    > httponly
 
-   The command that was run to obtain the answer for this question was `nmap -A 10.10.201.225`.
+   The command that was run to obtain the answer for this question was `nmap -A 10.10.7.229`. [Scan results](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/room_nmap_scan_results/aggressive_scan.log)
 
 6. Perform a script scan of vulnerabilities associated with this box, what denial of service (DOS) attack is this box susceptible to? Answer with the name for the vulnerability that is given as the section title in the scan output. A vuln scan can take a while to complete. In case you get stuck, the answer for this question has been provided in the hint, however, it's good to still run this scan and get used to using it as it can be invaluable. 
 
    > http-slowloris-check
 
-   Command used: `nmap --script vuln 10.10.201.225`.
+   Command used: `nmap --script vuln 10.10.7.229`. [Scan results](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/room_nmap_scan_results/vuln_scan.log)

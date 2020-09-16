@@ -1,0 +1,41 @@
+# Nmap 7.80 scan initiated Wed Sep 16 12:08:18 2020 as: nmap --script vuln -oN vuln_scan.log 10.10.7.229
+Nmap scan report for 10.10.7.229
+Host is up (0.23s latency).
+Not shown: 998 closed ports
+PORT   STATE SERVICE
+22/tcp open  ssh
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+80/tcp open  http
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+| http-cookie-flags: 
+|   /: 
+|     PHPSESSID: 
+|       httponly flag not set
+|   /login.php: 
+|     PHPSESSID: 
+|_      httponly flag not set
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-enum: 
+|   /login.php: Possible admin folder
+|   /robots.txt: Robots file
+|   /config/: Potentially interesting directory w/ listing on 'apache/2.4.7 (ubuntu)'
+|   /docs/: Potentially interesting directory w/ listing on 'apache/2.4.7 (ubuntu)'
+|_  /external/: Potentially interesting directory w/ listing on 'apache/2.4.7 (ubuntu)'
+| http-slowloris-check: 
+|   VULNERABLE:
+|   Slowloris DOS attack
+|     State: LIKELY VULNERABLE
+|     IDs:  CVE:CVE-2007-6750
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+|       the target web server and sending a partial request. By doing so, it starves
+|       the http server's resources causing Denial Of Service.
+|       
+|     Disclosure date: 2009-09-17
+|     References:
+|       http://ha.ckers.org/slowloris/
+|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+
+# Nmap done at Wed Sep 16 12:13:58 2020 -- 1 IP address (1 host up) scanned in 340.11 seconds
