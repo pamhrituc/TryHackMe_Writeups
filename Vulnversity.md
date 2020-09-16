@@ -9,7 +9,7 @@ Machine IP: 10.10.77.241
 
 1. Scan this box: `nmap -sV 10.10.77.241`.
 
-   This command will scan the machine with the specified IP using nmap, determining what are the versions of the running services. Questions 2, 3 can be answered by simply analyzing the [scan results](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/Vulnversity/vulnversity_scan_results.log).
+   This command will scan the machine with the specified IP using nmap, determining what are the versions of the running services. Questions 2, 3, 6 and 7 can be answered by simply analyzing the [scan results](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/Vulnversity/vulnversity_scan_results.log).
 
 2. Scan the box, how many ports are open?
 

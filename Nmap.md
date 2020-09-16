@@ -2,7 +2,13 @@
 
 The room for this walkthrough/writeup can be found [here](https://tryhackme.com/room/rpnmap)
 
-### Task 1
+
+### Task 1: Deploy!
+
+Machine IP: 10.10.7.229
+
+### Task 2: Nmap Quiz
+
 The answers to this task can be found by reading the help menu for nmap. This can be accessed by using `man nmap` for the manual pages or `nmap -h` for the help menu.
 
 1. First, how do you access the help menu?
@@ -66,7 +72,8 @@ The answers to this task can be found by reading the help menu for nmap. This ca
     > -Pn
 
 
-### Task 2
+### Task 3: Nmap Scanning
+
 To complete this task, the machine needs to be deployed. The files containing the Nmap scan results are [here](https://github.com/pamhrituc/TryHackMe_Writeups/tree/master/room_nmap_scan_results)
 
 1. Let's go ahead and start with the basics and perform a syn scan on the box provided. What will this command be **without** the host IP address?
