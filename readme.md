@@ -5,12 +5,12 @@ So far, it contains the writeups for the following rooms:
 - [Nmap](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/Nmap.md)
 - [Vulnversity](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/Vulnversity.md)
 - [Advent of Cyber](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/2019AdventOfCyber.md) [WIP]
+- [Hydra](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/Hydra.md)
 
 Coming up:
-- Metasploit
 - Basic Pentesting
+- Metasploit
 - OhSINT
-- Hydra
 - Crack the hash
 - The find command
 

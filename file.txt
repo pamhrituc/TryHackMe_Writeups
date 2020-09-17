@@ -1,3 +1,0 @@
-remember to wipe mysql:
-root
-ff912ABD*
