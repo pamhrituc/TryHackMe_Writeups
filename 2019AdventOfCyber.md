@@ -67,3 +67,62 @@ I used the `cat -n naughty_list.txt | grep 148` command to find who is on line 1
 4. Who is on line 52 of the nice list?
 
    > Lindsey Gaffney
+
+### Day 11: Elf Applications
+
+1. What is the password inside the creds.txt file?
+
+   First things first. I scanned the deployed machine using the following command: `nmap -sV 10.10.128.198`. [Scan results](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/2019AdventOfCyber/nmap_scan_results/day11_elf_apps.log). As seen in the scan results, the NFS service runs on port 2049. Since NFS is running on the deployed machine, I checked to see if any shares are available using `showmount -e ip-address` command. This command lists all the shared exported by NFS.
+
+   The scan returns a single result: /opt/files. Next, I tried to mount the shares to my file system: `mount 10.10.128.198:/opt/files /local/file/path`. Once the files have been successfully mounted, I checked the local/file/path to see that a file named creds.txt has been mounted. This file contains the answer to this question.
+
+   Finally, I unmounted the file system using the following command: `umount /local/file/path`
+
+   > securepassword123
+
+2. What is the name of the file running on port 21?
+
+   For this question, I connected to the deployed machine through FTP (`ftp 10.10.128.198`), using the *anonymous* credentials (username: anonymous, password: anonymous). After connecting, I checked the contents of the current directory, finding a file named file.txt. Using the `get file.txt` command, I retreived the file to my system, where I checked its contents.
+
+   ![screenshot_file](/2019AdventOfCyber/screenshots/day11/file.png?raw=true)
+
+   Nice!
+
+   > file.txt
+
+3. What is the password after enumerating the database?
+
+   I used mysql to get into the database using the credentials obtained in the previous question, using the following command: `mysql -h 10.10.128.198 -u root -p`. I entered the password when it was prompted.
+
+   ![screenshot_mysql](/2019AdventOfCyber/screenshots/day11/mysql.png?raw=true)
+
+   Now that I've successfully connected to the database, I checked to see what databases we have.
+
+   ![screenshot_db](/2019AdventOfCyber/screenshots/day11/db.png?raw=true)
+
+   We're interested in the *data* database, so let's select it. Next, let's see what tables we have in the database.
+
+   ![screenshot_tables](/2019AdventOfCyber/screenshots/day11/tables.png?raw=true)
+
+   Alright! Now we want to see all entries in the USER table.
+
+   ![screenshot_users](/2019AdventOfCyber/screenshots/day11/users.png?raw=true)
+
+   Awesome! We can see that user *admin* has the password *bestpassword*.
+
+   > bestpassword
+
+### Day 12: Elfcryption
+### Day 13: Accumulate
+### Day 14: Unknown Storage
+### Day 15: LFI
+### Day 16: File Confusion
+### Day 17: Hydra-ha-ha-haa
+### Day 18: ELF JS
+### Day 19: Commands
+### Day 20: Cronjob Privilege Escalation
+### Day 21: Reverse Elf-ineering
+### Day 22: If Santa, Then Christmas
+### Day 23: LapLANd (SQL Injection)
+### Day 24: Elf Stalk
+### Day 25: Challenge-less
