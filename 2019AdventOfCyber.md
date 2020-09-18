@@ -113,6 +113,27 @@ I used the `cat -n naughty_list.txt | grep 148` command to find who is on line 1
    > bestpassword
 
 ### Day 12: Elfcryption
+
+1. What is the md5 hashsum of the encrypted note1 file?
+
+   After downloading the *tosend.zip* file, I used the `unzip tosend.zip` command to obtain its contents: note1.txt.gpg, note2_encrypted.txt and private.key. To get the mdsum of the encrypted note1 file, I used the following command: `md5sum note1.txt.gpg`
+
+   > 24cf615e2a4f42718f2ff36b35614f8f
+
+2. Where was elf Bob told to meet Alice?
+
+   For this question, we need to decrypt note1.txt.gpg. For this I used the `gpg -d note1.txt.gpg` command (gpg, or GNU Privacy Guard, is an OpenPGP encryption and signing tool. The -d flag is specified for decyption). When prompted for a password, I used the hint given by TryHackMe (*25daysofchristmas*) and obtained the follwoing message: *I will meet you outside Santa's Grotto at 5pm!*
+
+   > Santa's Groto
+
+3. Decrypt note2 and obtain the flag!
+
+   To decrypt note2 I used the following command: `openssl rsautl -decrypt -inkey private.key -in note2_encrypted.txt -out note2.txt`, entered the password given as a hint (*hello*). The flag was found in the contents of note2.txt.
+
+   openssl a command line tool used for various cryptographic functions of OpenSSL's **crypto** library. The *rsautl* flag represents the RSA utility for signing, verification, encryption and decryption. The *-decrypt* flag is specified for decrypting. The *-in* flag is followed by the input file and the *-out* flag by the name of the output file.
+
+   > THM{ed9ccb6802c5d0f905ea747a310bba23}
+
 ### Day 13: Accumulate
 ### Day 14: Unknown Storage
 ### Day 15: LFI
