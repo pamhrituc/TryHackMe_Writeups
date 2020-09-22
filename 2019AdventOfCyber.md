@@ -179,6 +179,43 @@ I used the `cat -n naughty_list.txt | grep 148` command to find who is on line 1
    > mcchef
 
 ### Day 15: LFI
+
+1. What is Charlie going to book a holiday to?
+
+   This question can be answered by simply accessing the machine's IP address in a web browser.
+
+   ![screenshot_notes](/2019AdventOfCyber/screenshots/day15/notes.png?raw=true)
+
+   > Hawaii
+
+2. Read /etc/shadow and crack Charlies password.
+
+   Checking the source code of the page, I found this.
+
+   ![screenshot_script](/2019AdventOfCyber/screenshots/day15/script.png?raw=true)
+
+   Seems the page is dynamically loading the notes from the *views/notes/* directory. Let's change the request using Burpsuite. Make sure Burpsuite intercepts the request. Once that is done, go to the Proxy/Intercept tab in Burpsuite and edit the first line of the request so it looks like this:
+
+   ![screenshot_burpsuit](/2019AdventOfCyber/screenshots/day15/burpsuite.png?raw=true)
+
+   Then Forward it to the browser and voila!
+
+   ![screenshot_shadow](/2019AdventOfCyber/screenshots/day15/shadow.png?raw=true)
+
+   We have the contents of */etc/shadow*. Now all we have to do use hashcat to get the password. I saved charlie's password in a .txt file and ran the command: `hashcat -m 1800 charlie.txt /usr/share/wordlists/rockyou.txt`. The *-m* flag is followed by the hash-type we want to check against (check hashcat's manual pages for the numbers). In this case, since we want a UNIX password, we'll use the SHA-512 (UNIX) hash. */usr/share/wordlists/rockyou.txt* is the file containing a list of command passwords.
+
+   Now we run the command and wait. hashcat returns the password soon enough.
+
+   ![screenshot_password](/2019AdventOfCyber/screenshots/day15/password.png?raw=true)
+
+   > password1
+
+3. What is flag1.txt?
+
+   To find the contents of flag1.txt, we will log into charlie's machine using ssh (username: charlie, password: password1, found by solving the previous question). A quick `ls` and `cat flag1.txt` reveals the contents of flag1.txt
+
+   > THM{4ea2adf842713ad3ce0c1f05ef12256d}
+
 ### Day 16: File Confusion
 ### Day 17: Hydra-ha-ha-haa
 ### Day 18: ELF JS
