@@ -135,7 +135,49 @@ I used the `cat -n naughty_list.txt | grep 148` command to find who is on line 1
    > THM{ed9ccb6802c5d0f905ea747a310bba23}
 
 ### Day 13: Accumulate
+
+1. A web server is running on the target. What is the hidden directory which the website lives on?
+
+   First things first, nmap scan the target. The first command I used was `nmap -sV 10.10.24.100`, but it seemed the target was blocking the ping probes, so I used the -Pn flag (`nmap -Pn -sV 10.10.24.100`) [Scan results]()
+
+   According to the scan results, we're dealing with a webserver (http runs on port 80), so let's scan using gobuster (`gobuster dir -u http://10.10.24.100 -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt`). Now, we just wait for the results.
+
+   ![screenshot_gobuster](/2019AdventOfCyber/screenshots/day13/gobuster.png?raw=true)
+
+   The first result gobuster returns is */retro*. If we access *http://10.10.24.100/retro*, the browser will display this page.
+
+   ![screenshot_retro](/2019AdventOfCyber/screenshots/day13/retro.png?raw=true)
+
+   > /retro
+
+2. Gain initial access and read the contents of user.txt
+
+   The page seems to be a blog. Going through a couple of posts, I found this:
+
+   ![screenshot_creds](/2019AdventOfCyber/screenshots/day13/creds.png?raw=true)
+
+   Yikes! Seems the author left their credentials out in the open. Using these, we can log into his system. After a little bit of research, I used the *remmina* tool to get initial access to the machine. Use the RDP protocol, type in the target machine's IP address and log in with *wade* as username and *parzival* as the password. Once we're in, notice that the user.txt file is located on the Desktop.
+
+   > THM{HACK_PLAYER_ONE}
+
 ### Day 14: Unknown Storage
+
+1. What is the name of the file you found?
+
+   Based on the description of this task, we simple need to access 'http://advent-bucket-one.s3.amazonaws.com/'. The file name appears in plaintext.
+
+   ![screenshot_bucket](/2019AdventOfCyber/screenshots/day14/bucket.png?raw=true)
+
+   > employee_names.txt
+
+2. What is in the file?
+
+   To access the contents of the file, simply append it to the link of the bucket.
+
+   ![screenshot_file](/2019AdventOfCyber/screenshots/day14/file.png?raw=true)
+
+   > mcchef
+
 ### Day 15: LFI
 ### Day 16: File Confusion
 ### Day 17: Hydra-ha-ha-haa

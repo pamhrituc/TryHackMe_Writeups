@@ -8,6 +8,7 @@ So far, it contains the writeups for the following rooms:
 - [Hydra](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/Hydra.md)
 
 Coming up:
+- Blue
 - Basic Pentesting
 - Metasploit
 - OhSINT
