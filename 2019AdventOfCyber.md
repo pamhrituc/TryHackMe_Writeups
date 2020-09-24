@@ -217,6 +217,23 @@ I used the `cat -n naughty_list.txt | grep 148` command to find who is on line 1
    > THM{4ea2adf842713ad3ce0c1f05ef12256d}
 
 ### Day 16: File Confusion
+
+Just as mentioned in the task, I wrote a python script to solve all three of the questions. The script is [here](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/2019AdventOfCyber/day16/day16_file_confusion.py).
+
+I used the *zipfile* library to extract the zip files, going through each extracted zip file from the original zip file, I extracted the files, then check if it contains the password and if its version number is 1.1.
+
+1. How many files did you extract(excluding all the .zip files)
+
+   > 50
+
+2. How many files contain Version: 1.1 in their metadata?
+
+   > 3
+
+3. Which file contains the password?
+
+   > dL6w.txt
+
 ### Day 17: Hydra-ha-ha-haa
 ### Day 18: ELF JS
 ### Day 19: Commands
