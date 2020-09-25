@@ -249,6 +249,23 @@ I used the *zipfile* library to extract the zip files, going through each extrac
    > THM{c8eeb0468febbadea859baeb33b2541b}
 
 ### Day 18: ELF JS
+
+1. What is the admin's authid cookie value?
+
+   Accessing the deplayed machine's IP on port 3000 took me to a login page. So, I registered to the website and logged in with the account I made. After loggin in, I checked if there was an XSS vulnerability (as expected, there was).
+
+   So, to get the admin cookie, I posted the following message:
+
+   ![screenshot_message](/2019AdventOfCyber/screenshots/day18/message.png?raw=true)
+
+   This will get all users that load the page to send their cookie to me.
+
+   Next, I opened a *netcat* connection listening on the port inside a while loop and waited. Sure enough, when the admin logged in, their cookie was displayed in the console.
+
+   ![screenshot_nc](/2019AdventOfCyber/screenshots/day18/nc.png?raw=true)
+
+   > 2564799a4e6689972f6d9e1c7b406f87065cbf65
+
 ### Day 19: Commands
 ### Day 20: Cronjob Privilege Escalation
 ### Day 21: Reverse Elf-ineering
