@@ -319,11 +319,7 @@ Now that we have the location of the file, all we need to to is execute the `cat
 
    ![screenshot_scripts](/2019AdventOfCyber/screenshots/day20/scripts.png?raw=true)
 
-   To find where flag2 is, I ran the `find / -name "flag2*" 2>>/dev/null` command.
-
-   ![screenshot_find](/2019AdventOfCyber/screenshots/day20/find.png?raw=true)
-
-   Knowing where flag2 is, I added the following command to clean_up.sh: `chmod 404 /home/ubuntu/flag2.txt`, which gives other users reading permissions to the file. After waiting a minute, I could see the contents of flag2.txt
+   To find where flag2 is, I ran the `find / -name "flag2*" 2>>/dev/null` command. After finding the location of flag2, I added the following command to clean_up.sh: `chmod 404 /home/ubuntu/flag2.txt`, which gives other users reading permissions to the file. After waiting a minute, I could see the contents of flag2.txt
 
    > THM{b27d33705f97ba2e1f444ec2da5f5f61}
 ### Day 21: Reverse Elf-ineering
