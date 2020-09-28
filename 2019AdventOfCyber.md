@@ -298,6 +298,34 @@ Now that we have the location of the file, all we need to to is execute the `cat
    > 5W7WkjxBWwhe3RNsWJ3Q
 
 ### Day 20: Cronjob Privilege Escalation
+
+1. What port is SSH running on?
+
+   This question can be answered simply by running an nmap scan on the target's machine (`nmap -sV 10.10.158.199`).
+
+   > 4567
+
+2. Crack sam's password and read flag1.txt
+
+   For this one, I used hydra (`hydra -l sam -P /usr/share/wordlists/rockyou.txt 10.10.158.199 -t 4 ssh -s 4567`). Once hydra gave me the password, I logged into the machine through ssh (`ssh sam@10.10.158.199 -p 4567`). After I logged in, I could easily view the flag1.txt file.
+
+   > THM{dec4389bc09669650f3479334532aeab}
+
+3. Escalate your privileges by taking advantage of a cronjob running every minute. What is flag2?
+
+   Running `cronjob -l` shows us that user *sam* doesn't have any cronjobs running. Doing an `ls -la /home` shows us an interesting folder owned by *root*. Doing an `ls -la /home/scripts` shows us a file named *clean_up.sh*. Smells like a cronjob to me.
+
+   ![screenshot_home](/2019AdventOfCyber/screenshots/day20/home.png?raw=true)
+
+   ![screenshot_scripts](/2019AdventOfCyber/screenshots/day20/scripts.png?raw=true)
+
+   To find where flag2 is, I ran the `find / -name "flag2*" 2>>/dev/null` command.
+
+   ![screenshot_find](/2019AdventOfCyber/screenshots/day20/find.png?raw=true)
+
+   Knowing where flag2 is, I added the following command to clean_up.sh: `chmod 404 /home/ubuntu/flag2.txt`, which gives other users reading permissions to the file. After waiting a minute, I could see the contents of flag2.txt
+
+   > THM{b27d33705f97ba2e1f444ec2da5f5f61}
 ### Day 21: Reverse Elf-ineering
 ### Day 22: If Santa, Then Christmas
 ### Day 23: LapLANd (SQL Injection)

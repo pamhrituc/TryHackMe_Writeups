@@ -1,0 +1,10 @@
+# Nmap 7.80 scan initiated Mon Sep 28 13:43:23 2020 as: nmap -sV -oN day20_cronjob.log 10.10.158.199
+Nmap scan report for 10.10.158.199
+Host is up (0.29s latency).
+Not shown: 999 closed ports
+PORT     STATE SERVICE VERSION
+4567/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.8 (Ubuntu Linux; protocol 2.0)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Sep 28 13:43:48 2020 -- 1 IP address (1 host up) scanned in 25.20 seconds
