@@ -267,6 +267,36 @@ I used the *zipfile* library to extract the zip files, going through each extrac
    > 2564799a4e6689972f6d9e1c7b406f87065cbf65
 
 ### Day 19: Commands
+
+First things first, I accessed the deplayed machine's website (10.10.51.185:3000). This was the website's contents:
+
+![Screenshot_cookie](/2019AdventOfCyber/screenshots/day19/cookie.png?raw=true)
+
+Next, the task description mentions that '*McSkidy actually found something interesting on the /api/cmd endpoint.*'. Interesting. I accessed http:10.10.51.185:3000/api/cmd and this is what it returns:
+
+![screenshot_cmd](/2019AdventOfCyber/screenshots/day19/cmd.png?raw=true)
+
+Alright. But the file exists for sure. I supplied the `ls` parameter and this is what I got:
+
+![screenshot_ls](/2019AdventOfCyber/screenshots/day19/ls.png?raw=true)
+
+Nice! Now we're getting somewhere. We can do command injection on this webserver by supplying the command we want to execute after /api/cmd. Since we know the flag is in a file named *user.txt*, we're gonna execute the `find -name user.txt` command in order to find where the file is.
+
+Before executing the commands, they need to be URL encoded. We have:
+
+- %20 => space
+- %2F => "/"
+
+![screenshot_find](/2019AdventOfCyber/screenshots/day19/find.png?raw=true)
+
+Now that we have the location of the file, all we need to to is execute the `cat` command and we have the flag.
+
+![screenshot_flag](/2019AdventOfCyber/screenshots/day19/flag.png?raw=true)
+
+1. What are the contents of the user.txt file?
+
+   > 5W7WkjxBWwhe3RNsWJ3Q
+
 ### Day 20: Cronjob Privilege Escalation
 ### Day 21: Reverse Elf-ineering
 ### Day 22: If Santa, Then Christmas
