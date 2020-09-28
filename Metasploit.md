@@ -203,6 +203,7 @@ MACHINE IP: 10.10.130.41
     Use `show options` to check the parameters values.
 
    ![screenshot_prev2_2](room_metasploit/screenshots/prev2_2.png?raw=true)
+
     > No answer needed
 
 13. Once we've started this, we can check all of the jobs running on the system by running the command `jobs`
