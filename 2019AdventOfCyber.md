@@ -322,7 +322,31 @@ Now that we have the location of the file, all we need to to is execute the `cat
    To find where flag2 is, I ran the `find / -name "flag2*" 2>>/dev/null` command. After finding the location of flag2, I added the following command to clean_up.sh: `chmod 404 /home/ubuntu/flag2.txt`, which gives other users reading permissions to the file. After waiting a minute, I could see the contents of flag2.txt
 
    > THM{b27d33705f97ba2e1f444ec2da5f5f61}
+
 ### Day 21: Reverse Elf-ineering
+
+*The questions below are regarding the challenge1 binary file.*
+
+I'll admit, I've never done reverse engineering before. So this task was a real learning experience for me. I followed the guide linked in the challenge, [here](https://drive.google.com/file/d/1maTcdquyqnZCIcJO7jLtt4cNHuRQuK4x/view). It was really helpful.
+
+As shown in the guide, I downloaded and installed [radare2](https://rada.re/n/radare2.html). I ran challenge1, which didn't print anything to the console, so next, I the following command: `r2 -d challenge1`. This command opens the challenge1 binary in debugging mode. To examine the assembly code, I typed in the following command: `pdf @ main` (pdf = print disassembly function). Running the command on the challenge1 binary gave me this:
+
+![screenshot_r2_main](/2019AdventOfCyber/screenshots/day21/r2_main.png?raw=true)
+
+Now, we just gotta check the assembly instructions to get the answers to the three questions.
+
+1. What is the value of local_ch when its corresponding movl instruction is called(first if multiple)?
+
+   > 1
+
+2. What is the value of eax when the imull instruction is called?
+
+   > 6
+
+3. What is the value of local_4h before eax is set to 0?
+
+   > 6
+
 ### Day 22: If Santa, Then Christmas
 ### Day 23: LapLANd (SQL Injection)
 ### Day 24: Elf Stalk
