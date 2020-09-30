@@ -12,11 +12,16 @@ The link to the room can be found [here](https://tryhackme.com/room/25daysofchri
 ### Day 8: SUID Shenanigans
 
 Deploy and SSH into the machine.
+
 Username: holly
+
 Password: tuD@4vt0G\*TU
 
+
 Machine IP: 10.10.68.225
+
 Scanned using command: `nmap 10.10.68.225 -p 1-65535`
+
 [Scan results](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/2019AdventOfCyber/nmap_scan_results/day8_suid.log)
 
 1. What port is SSH running on?
