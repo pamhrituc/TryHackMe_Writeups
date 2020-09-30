@@ -1,0 +1,8 @@
+# Nmap 7.80 scan initiated Wed Sep 30 14:52:52 2020 as: nmap -p 1-65535 -oN day8_suid.log 10.10.68.225
+Nmap scan report for 10.10.68.225
+Host is up (0.22s latency).
+Not shown: 65534 closed ports
+PORT      STATE SERVICE
+65534/tcp open  unknown
+
+# Nmap done at Wed Sep 30 15:05:51 2020 -- 1 IP address (1 host up) scanned in 778.33 seconds

