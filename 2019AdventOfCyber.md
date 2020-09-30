@@ -329,7 +329,7 @@ Now that we have the location of the file, all we need to to is execute the `cat
 
 I'll admit, I've never done reverse engineering before. So this task was a real learning experience for me. I followed the guide linked in the challenge, [here](https://drive.google.com/file/d/1maTcdquyqnZCIcJO7jLtt4cNHuRQuK4x/view). It was really helpful.
 
-As shown in the guide, I downloaded and installed [radare2](https://rada.re/n/radare2.html). I ran challenge1, which didn't print anything to the console, so next, I the following command: `r2 -d challenge1`. This command opens the challenge1 binary in debugging mode. To examine the assembly code, I typed in the following command: `pdf @ main` (pdf = print disassembly function). Running the command on the challenge1 binary gave me this:
+As shown in the guide, I downloaded and installed [radare2](https://rada.re/n/radare2.html). I ran challenge1, which didn't print anything to the console, so next, I ran the following command: `r2 -d challenge1`. This command opens the challenge1 binary in debugging mode. Run the `aa` command, to tell r2 to analyze the program. Next, to examine the assembly code, I typed in the following command: `pdf @ main` (pdf = print disassembly function). Running the command on the challenge1 binary gave me this:
 
 ![screenshot_r2_main](/2019AdventOfCyber/screenshots/day21/r2_main.png?raw=true)
 
@@ -348,6 +348,25 @@ Now, we just gotta check the assembly instructions to get the answers to the thr
    > 6
 
 ### Day 22: If Santa, Then Christmas
+
+Day 22 seems to be similar to day 21. I ran if2, then I used the command `r2 -d if2` to open the if2 binary in debugging mode. Next, I ran `aa` for *r2* to analyze the program, then I ran `pdf @ main` to examine the assembly code.
+
+What is different in this challenge than day 21's, is that now we're dealing with `if` statements, which in assembly code translates to compare and jump instructions.
+
+![screenshot_r2_if](/2019AdventOfCyber/screenshots/day22/r2_if.png?raw=true)
+
+In this case, after local_8h and local_4h are assigned the values 8 and 2 respectively, local_8h's value is moved into the eax register. Then the value currently in eax is compared to the value of local_4h. Following the `cmp` instruction, we have the `jle` instrution, meaning the jump will be done if the first value is less or equal to the second value, in more detail, if the value of eax is less than or equal to the value of var_4h, the jump is done. Since the condition isn't true, the addition is done (the value 1 is added to the value of var_8h), and the jump after that is done.
+
+I've written the equivalent [c code](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/2019AdventOfCyber/day22/if2.c) for better understanding.
+
+1. what is the value of local_8h before the end of the main function?
+
+   > 9
+
+2. what is the value of local_4h before the end of the main function?
+
+   > 2
+
 ### Day 23: LapLANd (SQL Injection)
 ### Day 24: Elf Stalk
 ### Day 25: Challenge-less
