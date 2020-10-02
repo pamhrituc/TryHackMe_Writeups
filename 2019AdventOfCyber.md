@@ -416,5 +416,60 @@ I've written the equivalent [c code](https://github.com/pamhrituc/TryHackMe_Writ
    > 2
 
 ### Day 23: LapLANd (SQL Injection)
+
+Machine IP: 10.10.249.7
+
+1. Which field is SQL injectable? Use the input name used in the HTML code.
+
+   For this question, I accessed the website using the deployed machine's IP address. Then I checked the HTML code using *Inspect Element*. Since we are directed to the login page, we have 2 fields: E-mail and password. For the names of the fields check the HTML code.
+
+   > log_email
+
+2. What is Santa Claus' email address?
+
+   To get Santa Claus' email address, I used sqlmap. As a general idea, we're looking for a table that contains E-mails and passwords, which will most likely be found in a table named users.
+
+   Command #1: `sqlmap --batch -u http://10.10.249.7/ --forms --dbs`
+
+   Databases returned:
+
+   ![screenshot_dbs](/2019AdventOfCyber/screenshots/day23/dbs.png?raw=true)
+
+   Now, we wanna dive in deeper into a database (or databases) to find the *users* table. The social table seems like a good start. Command used: `sqlmap --batch -u http://10.10.249.7/ --forms -D social --tables`
+
+   Tables returned:
+
+   ![screenshot_tables](/2019AdventOfCyber/screenshots/day23/tables.png?raw=true)
+
+   Observe that one of the tables is named *users*. The information we're looking for is here. I used this command to dump it: `sqlmap --batch -u http://10.10.249.7/ --forms -D social -T users --dump`
+
+   ![screenshot_users](/2019AdventOfCyber/screenshots/day23/users.png?raw=true)
+
+   > bigman@shefesh.com
+   
+3. What is Santa Claus' plaintext password?
+
+   I used hashcat to find the password. Command: `hashcat -m 0 "f1267830a78c0b59acc06b05694b2e28" /usr/share/wordlists/rockyou.txt`
+
+   > saltnpepper
+
+4. Santa has a secret! Which station is he meeting Mrs Mistletoe in?
+
+   I logged into the forum using Santa's E-mail address and password obtained in the previous 2 questions. Then I went through the messages to find what what I was looking for.
+
+   ![screenshot_messages](/2019AdventOfCyber/screenshots/day23/messages.png?raw=true)
+
+   Yikes!
+
+   > Waterloo
+
+5. Once you're logged in to LapLANd, there's a way you can gain a shell on the machine! Find a way to do so and read the file in /home/user/
+
+   Just like in day 18, I opened a connection in nc, uploaded the php-reverse-shell.phtml file and voila. We're in.
+
+   ![screenshot_flag](/2019AdventOfCyber/screenshots/day23/flag.png?raw=true)
+
+   > THM{SHELLS_IN_MY_EGGNOG}
+
 ### Day 24: Elf Stalk
 ### Day 25: Challenge-less
