@@ -1,0 +1,26 @@
+# Nmap 7.80 scan initiated Sat Oct  3 13:13:03 2020 as: nmap -sV -O -oN day7_skillingup.log 10.10.26.123
+Nmap scan report for 10.10.26.123
+Host is up (0.24s latency).
+Not shown: 996 closed ports
+PORT     STATE    SERVICE       VERSION
+22/tcp   open     ssh           OpenSSH 7.4 (protocol 2.0)
+111/tcp  open     rpcbind       2-4 (RPC #100000)
+999/tcp  open     http          SimpleHTTPServer 0.6 (Python 3.6.8)
+1070/tcp filtered gmrupdateserv
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.80%E=4%D=10/3%OT=22%CT=1%CU=34664%PV=Y%DS=4%DC=I%G=Y%TM=5F784EF
+OS:8%P=x86_64-pc-linux-gnu)SEQ(SP=101%GCD=1%ISR=105%TI=Z%CI=Z%II=I%TS=A)OPS
+OS:(O1=M509ST11NW6%O2=M509ST11NW6%O3=M509NNT11NW6%O4=M509ST11NW6%O5=M509ST1
+OS:1NW6%O6=M509ST11)WIN(W1=68DF%W2=68DF%W3=68DF%W4=68DF%W5=68DF%W6=68DF)ECN
+OS:(R=Y%DF=Y%T=FF%W=6903%O=M509NNSNW6%CC=Y%Q=)T1(R=Y%DF=Y%T=FF%S=O%A=S+%F=A
+OS:S%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=FF%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R
+OS:=Y%DF=Y%T=FF%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=FF%W=0%S=A%A=Z%F
+OS:=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=FF%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%
+OS:T=FF%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=FF%CD
+OS:=S)
+
+Network Distance: 4 hops
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Oct  3 13:14:16 2020 -- 1 IP address (1 host up) scanned in 74.17 seconds

@@ -9,6 +9,31 @@ The link to the room can be found [here](https://tryhackme.com/room/25daysofchri
 ### Day 5: Ho-Ho-Hosint
 ### Day 6: Data Elf-iltration
 ### Day 7: Skilling Up
+
+Machine IP: 10.10.26.123
+
+1. how many TCP ports under 1000 are open?
+
+   To answer this question, I simply performed an nmap scan on the machine. Command: `nmap -sV -O 10.10.26.123`. The -sV flag is for detecting the versions of the services run on each port, the -O flag is for enabling OS detection. [Scan results](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/2019AdventOfCyber/nmap_scan_results/day7_skillingup.log). Using the scan results, I could answer questions 2 and 3 as well.
+
+   > 3
+
+2. What is the name of the OS of the host?
+
+   > Linux
+
+3. What version of SSH is running?
+
+   > 7.4
+
+4. What is the name of the file that is accessible on the server you found running?
+
+   For this question, I accessed the webserver that in run on the deployed machine, on port 999 (information from the nmap scan results). Once accessed, I could see the name of the file.
+
+   ![screenshot_file](/2019AdventOfCyber/screenshots/day07/file.png?raw=true)
+
+   > interesting.file
+
 ### Day 8: SUID Shenanigans
 
 Deploy and SSH into the machine.
@@ -473,3 +498,7 @@ Machine IP: 10.10.249.7
 
 ### Day 24: Elf Stalk
 ### Day 25: Challenge-less
+
+1. Complete another room on TryHackMe.
+
+   No answer needed
