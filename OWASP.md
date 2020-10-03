@@ -1,6 +1,6 @@
 # OWASP Top 10
 
-![screenshot_owasp]()
+![screenshot_owasp](/room_owasp/screenshots/owasp.png?raw=true)
 
 
 [Here](https://tryhackme.com/room/owasptop10) is the link to the TryHackMe room.
@@ -12,32 +12,19 @@ In this write-up, I will include only the answers to the questions and how I've 
 Learn one of the OWASP vulnerabilities every day for 10 days in a row. A new task will be revealed every day, where each task will be independent from the previous one. These challenges will cover each OWASP topic:
 
 
-    Day 1) Injection
-
-    Day 2) Broken Authentication
-
-    Day 3) Sensitive Data Exposure
-
-    Day 4) XML External Entity
-
-    Day 5) Broken Access Control
-
-    Day 6) Security Misconfiguration
-
-    Day 7) Cross-site Scripting
-
-    Day 8) Insecure Deserialization
-
-    Day 9) Components with Known Vulnerabilities
-
-    Day 10) Insufficent Logging & Monitoring
+- [Day 1) Injection](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/OWASP.md#day-1-injection)
+- [Day 2) Broken Authentication](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/OWASP.md#day-2-broken-authentication)
+- [Day 3) Sensitive Data Exposure](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/OWASP.md#day-3-sensitive-data-exposure)
+- [Day 4) XML External Entity](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/OWASP.md#day-4-xml-external-entity)
+- [Day 5) Broken Access Control](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/OWASP.md#day-5-broken-access-control)
+- [Day 6) Security Misconfiguration](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/OWASP.md#day-6-security-misconfiguration)
+- [Day 7) Cross-site Scripting](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/OWASP.md#day-7-cross-site-scripting)
+- [Day 8) Insecure Deserialization](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/OWASP.md#day-8-insecure-deserialization)
+- [Day 9) Components with Known Vulnerabilities](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/OWASP.md#day-9-components-with-known-vulnerabilities)
+- [Day 10) Insufficent Logging & Monitoring](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/OWASP.md#day-10-insufficient-logging--monitoring)
 
 
 The challenges are designed for beginners and assume no previous knowledge of security.
-
-1. Read the above.
-
-   > No answer needed
 
 ### Day 1: Injection
 
