@@ -8,6 +8,49 @@ The link to the room can be found [here](https://tryhackme.com/room/25daysofchri
 ### Day 4: Training
 ### Day 5: Ho-Ho-Hosint
 ### Day 6: Data Elf-iltration
+
+Another day, another pcap file. Just like in day3, I used wireshark to open and analyze *holidaythief.pcap*.
+
+1. What data was exfiltrated via DNS?
+
+   First, after opening the *holidaythief.pcap* using wireshark, I used the filter to view only DNS packets. This caught my eye.
+
+   ![screenshot_dns](/2019AdventOfCyber/screenshots/day06/dns.png?raw=true)
+
+   I used [CyberChef](https://gchq.github.io/CyberChef/) to decrypt the subdomain and got what I was looking for.
+
+   ![screenshot_cyberchef](/2019AdventOfCyber/screenshots/day06/cyberchef.png?raw=true)
+
+   > Candy Cane Serial Number 8491
+
+2. What did Little Timmy want to be for Christmas?
+
+   Going though the HTTP packets, I noticed a .zip file.
+
+   ![screenshot_zip](/2019AdventOfCyber/screenshots/day06/zip.png?raw=true)
+
+   So, I exported the christmasfiles.zip file and tried to unzip it.
+
+   ![screenshot_password](/2019AdventOfCyber/screenshots/day06/password.png?raw=true)
+
+   It asks for a password, which I don't have. I went through the HTTP packets in wireshark to see if it was there. It wasn't. So that left me to crack it. I used *fcrackzip* to do so. Command: `fcrackzip -b --method 2 -D -p /usr/share/wordlists/rockyou.txt -v christmaslists.zip` (the -b flag means use brute force, the --method means use the method number and not the default one, the -D flag will tell fcrackzip to use dictionary mode, followed by the file which contains the list of possible passwords, -v verifies the password is correct and finally the zip file to crack).
+
+   ![screenshot_fcrackzip](/2019AdventOfCyber/screenshots/day06/fcrackzip.png?raw=true)
+
+   Now, that I have the password, I was able to unzip the file and see what Little Timmy wants to be for Christmas.
+
+   ![screenshot_christmas_lists](/2019AdventOfCyber/screenshots/day06/christmas_lists.png?raw=true)
+
+   > PenTester
+
+3. What was hidden within the file?
+
+   Another file of interest that appeared among the HTTP packets was TryHackMe.jpg. I exported it. `strings TryHackMe.jpg` revealed nothing of interest, so I used steghide (`steghide extract -sf TryHackMe.jpg`). The command wrote the extracted data to christmasmonster.txt, which contained a nice poem and the answer to this question.
+
+   ![screenshot_steghide](/2019AdventOfCyber/screenshots/day06/steghide.png?raw=true)
+
+   > RFC527
+
 ### Day 7: Skilling Up
 
 Machine IP: 10.10.26.123
