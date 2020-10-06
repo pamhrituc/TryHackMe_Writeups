@@ -81,6 +81,33 @@ Deployed machine IP: 10.10.41.189
    > DR PEPPER
 
 ### Day 2: Broken Authentication
+
+Machine IP: 10.10.50.243
+
+1. What is the flag that you found in darren's account?
+
+   For today's task, all I had to do was follow the steps the task describes.
+
+   First, I made an account as darren, with a slight modification to the username.
+
+   ![screenshot_darren](/room_owasp/screenshots/day02/darren.png?raw=true)
+
+   Notice the space in front of "darren". After registering as darren-not-darren, I logged in using my registration credentials and voila, we have the flag found in darren's account.
+
+   ![screenshot_flag](/room_owasp/screenshots/day02/flag.png?raw=true)
+
+   > fe86079416a21a3c99937fea8874b667
+
+2. Now try to do the same trick and see if you can login as arthur.
+
+   I did the same thing for arthur as for darren.
+
+   > No answer needed
+
+3. What is the flag that you found in arthur's account?
+
+   > d9ac0f7db4fda460ac3edeb75d75e16e
+
 ### Day 3: Sensitive Data Exposure
 ### Day 4: XML External Entity
 ### Day 5: Broken Access Control
