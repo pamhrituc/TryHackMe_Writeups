@@ -7,6 +7,51 @@ The link to the room can be found [here](https://tryhackme.com/room/25daysofchri
 ### Day 3: Evil Elf
 ### Day 4: Training
 ### Day 5: Ho-Ho-Hosint
+
+1. What is Lola's date of birth? Format: Month Date, Year(e.g November 12, 2019)
+
+   For today's challenge, we are given an image of the grinch. I used `exiftool` to get the image's metadata.
+
+   ![screenshot_metdata](/2019AdventOfCyber/screenshots/day05/metadata.png?raw=true)
+
+   *JLolax1* is the creator of the image, a quick google search of the creator led me to the creator's twitter page.
+
+   ![screenshot_twitter](/2019AdventOfCyber/screenshots/day05/twitter.png?raw=true)
+
+   On Lola's page we can find the answers to this question, as well as questions 2 and 3.
+
+   > December 29, 1900
+
+2. What is Lola's current occupation?
+
+   > Santa's Helper
+
+3. What phone does Lola make?
+
+   > iPhone X
+
+4. What date did Lola first start her photography? Format: dd/mm/yyyy
+
+   For question 4 and 5, I accessed Lola's wordpress page using the link found in her Twitter bio. Next, using the [WayBack Machine](https://web.archive.org/), I went through some of the captures until I found this:
+
+   ![screenshot_wayback](/2019AdventOfCyber/screenshots/day05/wayback.png?raw=true)
+
+   There's the answer for this question!
+
+   > 23/10/2014
+
+5. What famous woman does Lola have on her web page?
+
+   This is the woman whose identity we're looking for.
+
+   ![screenshot_woman](/2019AdventOfCyber/screenshots/day05/woman.png?raw=true)
+
+   Doing a quick reverse search on the image reveals that she's Ada Lovelace.
+
+   ![screeshot_ada](/2019AdventOfCyber/screenshots/day05/ada.png?raw=true)
+
+   > Ada Lovelace
+
 ### Day 6: Data Elf-iltration
 
 Another day, another pcap file. Just like in day3, I used wireshark to open and analyze *holidaythief.pcap*.
