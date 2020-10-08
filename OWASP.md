@@ -109,6 +109,49 @@ Machine IP: 10.10.50.243
    > d9ac0f7db4fda460ac3edeb75d75e16e
 
 ### Day 3: Sensitive Data Exposure
+
+Machine IP: 10.10.156.59
+
+1. Have a look around the webapp. The developer has left themselves a note indicating that there is sensitive data in a specific directory.
+
+   What is the name of the mentioned directory?
+
+   Going to the source code of the login page, I found the folder */assets*
+
+   > /assets
+
+2. Navigate to the directory you found in question one. What file stands out as being likely to contain sensitive data?
+
+   I went to the directory and this is what I found:
+
+   ![screenshot_assets](/room_owasp/screenshots/day03/assets.png?raw=true)
+
+   Seems *webapp.db* is the file of interest. I downloaded it to my machine.
+
+   > webapp.db
+
+3. Use the supporting material to access the sensitive data. What is the password hash of the admin user?
+
+   I just followed the supporting material to get the password hash of the admin user.
+
+   ![screenshot_commands](/room_owasp/screenshots/day03/commands.png?raw=true)
+
+   > 6eea9b7ef19179a06954edd0f6c05ceb
+
+4. Crack the hash. What is the admin's plaintext password?
+
+   I used hashcat for this one. Command: `hashcat -m 0 "6eea9b7ef19179a06954edd0f6c05ceb" /usr/share/wordlists/rockyou.txt`
+
+   > qwertyuiop
+
+5. Login as the admin. What is the flag?
+
+   Just log into the deployed machine through the login page (Username: admin; Password: qwertyuiop)
+
+   ![screenshot_flag](/room_owasp/screenshots/day03/flag.png?raw=true)
+
+   > THM{Yzc2YjdkMjE5N2VjMzNhOTE3NjdiMjdl}
+
 ### Day 4: XML External Entity
 ### Day 5: Broken Access Control
 ### Day 6: Security Misconfiguration
