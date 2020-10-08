@@ -6,6 +6,59 @@ The link to the room can be found [here](https://tryhackme.com/room/25daysofchri
 ### Day 2: Arctic Forum
 ### Day 3: Evil Elf
 ### Day 4: Training
+
+Machine IP: 10.10.89.60
+
+What we are given, other than tha machine's IP is the following information:
+
+`ssh mcsysadmin@10.10.89.60`
+
+username: mcsysadmin
+
+password: bestelf1234
+
+1. How many visible files are there in the home directory(excluding ./ and ../)?
+
+   Command: `ls`
+
+   > 8
+
+2. What is the content of file5?
+
+   Command: `cat`
+
+   > recipes
+
+3. Which file contains the string ‘password’?
+
+   Command: `grep -l -e "password" -f *`
+
+   > file6
+
+4. What is the IP address in a file in the home folder?
+
+   Command: `cat * | grep -Eo "([0-9]{1,3}[\.]){3}[0-9]{1,3}"`
+
+   > 10.0.0.05
+
+5. How many users can log into the machine?
+
+   Command: `ls -la /home`
+
+   > 3
+
+6. What is the sha1 hash of file8?
+
+   Command: `sha1sum file8`
+
+   > fa67ee594358d83becdd2cb6c466b25320fd2835
+
+7. What is mcsysadmin’s password hash?
+
+   Command: `find / 2>>/dev/null | grep "shadow.bak"`
+
+   > $6$jbosYsU/$qOYToX/hnKGjT0EscuUIiIqF8GHgokHdy/Rg/DaB.RgkrbeBXPdzpHdMLI6cQJLdFlS4gkBMzilDBYcQvu2ro/
+
 ### Day 5: Ho-Ho-Hosint
 
 1. What is Lola's date of birth? Format: Month Date, Year(e.g November 12, 2019)
