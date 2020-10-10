@@ -5,6 +5,37 @@ The link to the room can be found [here](https://tryhackme.com/room/25daysofchri
 ### Day 1: Inventory Management
 ### Day 2: Arctic Forum
 ### Day 3: Evil Elf
+
+For today's challenge we have the *Evil Elf.pcap* file. I opened this with wireshark.
+
+1. Whats the destination IP on packet number 998?
+
+   For this question, just find packet 998 and check its destination IP address.
+
+   ![screenshot_packet_998](/2019AdventOfCyber/screenshots/day03/packet_998.png?raw=true)
+
+   > 63.32.89.195
+
+2. What item is on the Christmas list?
+
+   For this question, filter out any packets that aren't *telnet*. We have 3 telnet packets, out of which observe one of these contains the following:
+
+   ![screenshot_telnet](/2019AdventOfCyber/screenshots/day03/telnet.png?raw=true)
+
+   > ps4
+
+3. Crack buddy's password!
+
+   The second *telnet* packet contains the `cat /etc/shadow` command, meaning that what is returned is the usernames and the hashed passwords. If we check the third *telnet* packet, we can see that this packet indeed contains the users and the hashed passwords. Now all that I need to do is crack the hash. I used hashcat to do this.
+
+   ![screenshot_shadow](/2019AdventOfCyber/screenshots/day03/shadow.png?raw=true)
+
+   Command: `hashcat -m 1800 buddy_hash.txt /usr/share/wordlists/rockyou.txt`
+
+   Soon enough, hashcat cracks the hash and displays the password.
+
+   > rainbow
+
 ### Day 4: Training
 
 Machine IP: 10.10.89.60
