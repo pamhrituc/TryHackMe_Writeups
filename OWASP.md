@@ -153,6 +153,92 @@ Machine IP: 10.10.156.59
    > THM{Yzc2YjdkMjE5N2VjMzNhOTE3NjdiMjdl}
 
 ### Day 4: XML External Entity
+
+Machine IP: 10.10.84.233
+
+##### XML External Entity - eXtensible Markup Language
+
+For this part, the questions can be answered by reading the explanations from the TryHackMe room.
+
+1. Full form of XML.
+
+   > extensible markup language
+
+2. Is it compulsory to have XML prolog in XML documents?
+
+   > No
+
+3. Can we validate XML documents against a schema?
+
+   > Yes
+
+4. How can we specify XML version and encoding in XML document?
+
+   > XML Prolog
+
+##### XML External Entity - DTD
+
+1. How do you define a new ELEMENT?
+
+   > !ELEMENT
+
+2. How do you define a ROOT element?
+
+   > !DOCTYPE
+
+3. How do you define a new ENTITY?
+
+   > !ENTITY
+
+##### XML External Entity - XXE Payload
+
+1. Try the payload mentioned in description on the website.
+
+   So, this is stright forward, just use the second payload in the text box and submit it. After submitting, the webpage should display the contents of */etc/passwd*.
+   ![screenshot_xxe_1](/room_owasp/screenshots/day04/xxe_1.png?raw=true)
+
+   ![screenshot_xxe_2](/room_owasp/screenshots/day04/xxe_2.png?raw=true)
+
+   > No answer needed
+
+##### XML External Entity - Exploiting
+
+1. Try to display your own name using any payload.
+
+   Just submit the first payload shown in the previous task and replace accoringly.
+
+   ![screenshot_name](/room_owasp/screenshots/day04/name.png?raw=true)
+
+   > No answer needed
+
+2. See if you can read the /etc/passwd.
+
+   This part was done in the previous task.
+
+   > No answer needed
+
+3. What is the name of the user in /etc/passwd?
+
+   > falcon
+
+4. Where is falcon's SSH key located?
+
+   Payload:
+
+   ```
+   <?xml version="1.0"?>
+   <!DOCTYPE root [<!ENTITY read SYSTEM 'file:///home/falcon/.ssh/id_rsa'>]>
+   <root>&read;</root>
+   ```
+
+   > /home/falcon/.ssh/id_rsa
+
+   ![screenshot_ssh](/room_owasp/screenshots/day04/ssh.png?raw=true)
+
+5. What are the first 18 characters for falcon's private key?
+
+   > MIIEogIBAAKCAQEA7bq
+
 ### Day 5: Broken Access Control
 ### Day 6: Security Misconfiguration
 ### Day 7: Cross-site Scripting
