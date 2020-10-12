@@ -4,6 +4,37 @@ The link to the room can be found [here](https://tryhackme.com/room/25daysofchri
 
 ### Day 1: Inventory Management
 ### Day 2: Arctic Forum
+
+Machine IP: 10.10.218.103
+
+1. What is the path of the hidden page?
+
+   To answer this question, and generally to find hidden pages on websites, I used gobuster. Command: `gobuster dir -u http://10.10.218.103:3000/ -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt`
+
+   ![screenshot_gobuster](/2019AdventOfCyber/screenshots/day02/gobuster.png?raw=true)
+
+   > /sysadmin
+
+2. What is the password you found?
+
+   Upon accessing the hidden page on the webserver and checking the source code, I found this comment:
+
+   ![screenshot_source](/2019AdventOfCyber/screenshots/day02/source.png?raw=true)
+
+   So, a quick google search led me to their [github page](https://github.com/ashu-savani/arctic-digital-design), where I found the admin login credentials.
+
+   ![screenshot_credentials](/2019AdventOfCyber/screenshots/day02/credentials.png?raw=true)
+
+   > defaultpass
+
+3. What do you have to take to the 'partay'?
+
+   After using the credentials found on the github page, you can find what you have to bring to the 'partay'.
+
+   ![screenshot_BYOE](/2019AdventOfCyber/screenshots/day02/BYOE.png?raw=true)
+
+   > Eggnog
+
 ### Day 3: Evil Elf
 
 For today's challenge we have the *Evil Elf.pcap* file. I opened this with wireshark.
