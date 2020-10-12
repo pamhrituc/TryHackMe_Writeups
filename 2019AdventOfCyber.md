@@ -10,7 +10,7 @@ Machine IP: 10.10.51.171
 
    First things first, after iaccessing the login page of the website, I created an account. After logging creating an account, I logged in and checked the cookies value from the Storage tab.
 
-   ![screenshot_authid]()/2019AdventOfCyber/screenshots/day01/authid.png?raw=true
+   ![screenshot_authid](/2019AdventOfCyber/screenshots/day01/authid.png?raw=true)
 
    > authid
 
