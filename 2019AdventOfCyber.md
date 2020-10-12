@@ -3,6 +3,31 @@
 The link to the room can be found [here](https://tryhackme.com/room/25daysofchristmas). This writeup contains the solutions of the 2019 advent event on TryHackMe.
 
 ### Day 1: Inventory Management
+
+Machine IP: 10.10.51.171
+
+1. What is the name of the cookie used for authentication?
+
+   First things first, after iaccessing the login page of the website, I created an account. After logging creating an account, I logged in and checked the cookies value from the Storage tab.
+
+   ![screenshot_authid]()/2019AdventOfCyber/screenshots/day01/authid.png?raw=true
+
+   > authid
+
+2. If you decode the cookie, what is the value of the fixed part of the cookie?
+
+   For this part, I used [Cyberchef](https://gchq.github.io/CyberChef/) to decode the cookie. As you can see, after decoding the cookie (from base64), the string is the username concatinated with the string *v4er9ll1!ss*.
+
+   > v4er9ll1!ss
+
+3. After accessing his account, what did the user mcinventory request?
+
+   To access mcinventory's account, simply encode a new authod using base64, with the fixed part of the cookie and the string *mcinventory*. Change the value of authid with the encoded string. Reload the page and you've accessed mcinventory's account.
+
+   ![screenshot_mcinventory](/2019AdventOfCyber/screenshots/day01/mcinventory.png?raw=true)
+
+   > firewall
+
 ### Day 2: Arctic Forum
 
 Machine IP: 10.10.218.103
