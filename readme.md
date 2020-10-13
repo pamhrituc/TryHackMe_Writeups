@@ -13,6 +13,17 @@ So far, it contains the writeups for the following rooms:
 Coming up:
 - Blue
 - Basic Pentesting
+- Web Fundamentals
+- Kenobi
+- Mr Robot CTF
 - OhSINT
+- tmux
+- CC: Pen Testing
+- Introductory Networking
+- Simple CTF
+- The Cod Caper
+- Bounty Hacker
+- Agent Sudo
+- c4ptur3-th3-fl4g
 - The find command
 
