@@ -240,6 +240,35 @@ For this part, the questions can be answered by reading the explanations from th
    > MIIEogIBAAKCAQEA7bq
 
 ### Day 5: Broken Access Control
+
+Machine IP: 10.10.240.167
+
+1. Read and understand how IDOR works.
+
+   IDOR = Insecure Direct Object Reference
+
+   Read more about it by accessing the room.
+
+   > No answer needed
+
+2. Deploy the machine and go to http://10.10.240.167 - Login with the username being noot and the password test1234.
+
+   ![screenshot_login](/room_owasp/screenshots/day05/login.png?raw=true)
+
+   After loggin in with the username and password given to us, look at the URL. Notice the note id.
+
+   ![screenshot_logged](/room_owasp/screenshots/day05/logged.png?raw=true)
+
+   > No answer needed
+
+3. Look at other users notes. What is the flag?
+
+   I changed the note id from 1 to 0 and got the flag. Since the site is incorrectly configured, anyone can access any note by simply changing the note id.
+
+   ![screenshot_flag](/room_owasp/screenshots/day05/flag.png?raw=true)
+
+   > flag{fivefourthree}
+
 ### Day 6: Security Misconfiguration
 ### Day 7: Cross-site Scripting
 ### Day 8: Insecure Deserialization
