@@ -270,6 +270,31 @@ Machine IP: 10.10.240.167
    > flag{fivefourthree}
 
 ### Day 6: Security Misconfiguration
+
+1. Deploy the VM.
+
+   Machine IP: 10.10.16.114
+
+   > No answer needed
+
+2. Hack into the webapp, and find the flag!
+
+   I accessed the page, which looks like this:
+
+   ![screenshot_notes](/room_owasp/screenshots/day06/notes.png?raw=true)
+
+   I used gobuster (`gobuster dir -u http://10.10.16.114/ -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt`) to see if there were any hidden directories. It didn't find any, so I quickly went through the */js* directory to see if I could find anything there.
+
+   The next thing I did was a Google search to see if the webapp is open source. It is! The first result is the github page of the app, containing the source code of the app. The README.md file contained the default credentials.
+
+   ![screenshot_github](/room_owasp/screenshots/day06/github.png?raw=true)
+
+   I used these default credentials to login to the app and obtained the flag.
+
+   ![screenshot_flag](/room_owasp/screenshots/day06/flag.png?raw=true)
+
+   > thm{4b9513968fd564a87b28aa1f9d672e17}
+
 ### Day 7: Cross-site Scripting
 ### Day 8: Insecure Deserialization
 ### Day 9: Components with Known Vulnerabilities
