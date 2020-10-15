@@ -296,6 +296,75 @@ Machine IP: 10.10.240.167
    > thm{4b9513968fd564a87b28aa1f9d672e17}
 
 ### Day 7: Cross-site Scripting
+
+1. Deploy the VM.
+
+   Machine IP: 10.10.107.186
+
+   > No answer needed
+
+2. Go to http://10.10.107.186/reflected and craft a reflected XSS payload that will cause a popup saying "Hello".
+
+   To create a payload that will cause a popup saying "Hello", simply create a script tag containing the javascript alert function (`<script>alert("Hello");</script>`). Then hit *search*. The page will reload, with two popups appearing: the first says "Hello", the second the flag for this question.
+
+   ![screenshot_reflective11](/room_owasp/screenshots/day07/reflective11.png?raw=true)
+
+   ![screenshot_reflective12](/room_owasp/screenshots/day07/reflective12.png?raw=true)
+
+   ![screenshot_reflective13](/room_owasp/screenshots/day07/reflective13.png?raw=true)
+
+   > ThereIsMoreToXSSThanYouThink
+
+3. On the same reflective page, craft a reflected XSS payload that will cause a popup with your machines IP address.
+
+   This one is solved similary to the previous one, except, instead of using the string "Hello" as an argument for the *alert* function, I used *window.location.hostname*. Just like in the previous question, after hitting *search*, the page reloads and displays 2 popups: first with the deployed machine's IP, the second with the flag for this question.
+
+   ![screenshot_reflective21](/room_owasp/screenshots/day07/reflective21.png?raw=true)
+
+   ![screenshot_reflective22](/room_owasp/screenshots/day07/reflective22.png?raw=true)
+
+   ![screenshot_reflective23](/room_owasp/screenshots/day07/reflective23.png?raw=true)
+
+   > ReflectiveXss4TheWin
+
+4. Now navigate to http://10.10.107.186/stored and make an account. Then add a comment and see if you can insert some of your own HTML.
+
+   I made and account, after which I inserted some HTML code (a paragraph). After submitting my comment, which appeared as a paragraph (since I used the p tag), alongside the flag.
+
+   ![screenshot_stored11](/room_owasp/screenshots/day07/stored11.png?raw=true)
+
+   ![screenshot_stored12](/room_owasp/screenshots/day07/stored12.png?raw=true)
+
+   > HTML_T4gs
+
+5. On the same page, create an alert popup box appear on the page with your document cookies.
+
+   Just like in questions 2 and 3, submit the alert function with document.cookie as its argument in a script tag.
+
+   ![screenshot_stored21](/room_owasp/screenshots/day07/stored21.png?raw=true)
+
+   Upon submitting the comment, the page reloads, the document's cookie is displayed in a popup, after which the flag for this question is displayed in a second popup.
+
+   ![screenshot_stored22](/room_owasp/screenshots/day07/stored22.png?raw=true)
+
+   ![screenshot_stored23](/room_owasp/screenshots/day07/stored23.png?raw=true)
+
+   > W3LL_D0N3_LVL2
+
+6. Change "XSS Playground" to "I am a hacker" by adding a comment and using Javascript.
+
+   For this question, the HTML code needed to be manipulated. I check the id of the **XSS Playground** element of the page.
+
+   ![screenshot_stored31](/room_owasp/screenshots/day07/stored31.png?raw=true)
+
+   Then, using javascript, I replaced the text content of the element with the id *#thm-title* with the required text. After submitting the comment, observed the text has changed from **XSS Playground** to **I am a hacker**.
+
+   ![screenshot_stored32](/room_owasp/screenshots/day07/stored32.png?raw=true)
+
+   ![screenshot_stored33](/room_owasp/screenshots/day07/stored33.png?raw=true)
+
+   > websites_can_be_easily_defaced_with_xss
+
 ### Day 8: Insecure Deserialization
 ### Day 9: Components with Known Vulnerabilities
 ### Day 10: Insufficient Logging & Monitoring
