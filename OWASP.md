@@ -366,5 +366,76 @@ Machine IP: 10.10.240.167
    > websites_can_be_easily_defaced_with_xss
 
 ### Day 8: Insecure Deserialization
+
+*Insecure Deserialization is a vulnerability which occurs when untrusted data is used to abuse the logic of an application" (Acunetix., 2017)*
+
+Machine IP: 10.10.61.119
+
+1. Who developed the Tomcat application?
+
+   > The Apache Software Foundation
+
+2. What type of attack that crashes services can be performed with insecure deserialization?
+
+   > Denial of Service
+
+##### Insecure Deserialization - Objects
+
+1. Select the correct term of the following statement:
+
+   *if a dog was sleeping, would this be:*
+
+   A) A State
+
+   B) A Behaviour
+
+   > a behaviour
+
+##### Insecure Deserialization - Deserialization
+
+1. What is the name of the base-2 formatting that data is sent across a network as? 
+
+   > binary
+
+##### Insecure Deserialization - Cookies
+
+1. If a cookie had the path of *webapp.com/login* , what would the URL that the user has to visit be? 
+
+   > webapp.com/login
+
+2. What is the acronym for the web technology that Secure cookies work over?
+
+   > HTTPS
+
+##### Insecure Deserialization - Cookies Practical
+
+1. 1st flag (cookie value)
+
+   In the *Inspect Element* option, check the Cookie values. I decoded the sessionId value using [CyberChef](https://gchq.github.io/CyberChef/) and obtained the flag.
+
+   ![screenshot_cookie1](/room_owasp/screenshots/day08/cookie1.png?raw=true)
+
+   ![screenshot_cyberchef](/room_owasp/screenshots/day08/cyberchef.png?raw=true)
+
+   > THM{good_old_base64_huh}
+
+2. 2nd flag (admin dashboard)
+
+   For this, I followed the instructions the author provided and obtained the second flag.
+
+   ![screenshot_cookie2](/room_owasp/screenshots/day08/cookie2.png?raw=true)
+
+   ![screenshot_flag](/room_owasp/screenshots/day08/flag.png?raw=true)
+
+   > THM{heres_the_admin_flag}
+
+##### Insecure Deserialization - Remote Code Execution
+
+This part was mostly following the instructions provided by the author of the room.
+
+1. flag.txt
+
+   > 4a69a7ff9fd68
+
 ### Day 9: Components with Known Vulnerabilities
 ### Day 10: Insufficient Logging & Monitoring
