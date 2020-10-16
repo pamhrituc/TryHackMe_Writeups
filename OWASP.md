@@ -156,7 +156,7 @@ Machine IP: 10.10.156.59
 
 Machine IP: 10.10.84.233
 
-##### XML External Entity - eXtensible Markup Language
+#### XML External Entity - eXtensible Markup Language
 
 For this part, the questions can be answered by reading the explanations from the TryHackMe room.
 
@@ -176,7 +176,7 @@ For this part, the questions can be answered by reading the explanations from th
 
    > XML Prolog
 
-##### XML External Entity - DTD
+#### XML External Entity - DTD
 
 1. How do you define a new ELEMENT?
 
@@ -190,7 +190,7 @@ For this part, the questions can be answered by reading the explanations from th
 
    > !ENTITY
 
-##### XML External Entity - XXE Payload
+#### XML External Entity - XXE Payload
 
 1. Try the payload mentioned in description on the website.
 
@@ -201,7 +201,7 @@ For this part, the questions can be answered by reading the explanations from th
 
    > No answer needed
 
-##### XML External Entity - Exploiting
+#### XML External Entity - Exploiting
 
 1. Try to display your own name using any payload.
 
@@ -379,7 +379,7 @@ Machine IP: 10.10.61.119
 
    > Denial of Service
 
-##### Insecure Deserialization - Objects
+#### Insecure Deserialization - Objects
 
 1. Select the correct term of the following statement:
 
@@ -391,13 +391,13 @@ Machine IP: 10.10.61.119
 
    > a behaviour
 
-##### Insecure Deserialization - Deserialization
+#### Insecure Deserialization - Deserialization
 
 1. What is the name of the base-2 formatting that data is sent across a network as? 
 
    > binary
 
-##### Insecure Deserialization - Cookies
+#### Insecure Deserialization - Cookies
 
 1. If a cookie had the path of *webapp.com/login* , what would the URL that the user has to visit be? 
 
@@ -407,7 +407,7 @@ Machine IP: 10.10.61.119
 
    > HTTPS
 
-##### Insecure Deserialization - Cookies Practical
+#### Insecure Deserialization - Cookies Practical
 
 1. 1st flag (cookie value)
 
@@ -429,7 +429,7 @@ Machine IP: 10.10.61.119
 
    > THM{heres_the_admin_flag}
 
-##### Insecure Deserialization - Remote Code Execution
+#### Insecure Deserialization - Remote Code Execution
 
 This part was mostly following the instructions provided by the author of the room.
 
