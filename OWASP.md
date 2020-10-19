@@ -438,4 +438,23 @@ This part was mostly following the instructions provided by the author of the ro
    > 4a69a7ff9fd68
 
 ### Day 9: Components with Known Vulnerabilities
+
+Machine IP: 10.10.103.151
+
+1. How many characters are in /etc/passwd (use wc -c /etc/passwd to get the answer)
+
+   Using the browser to go to the main page of the web app, this is what is displayed:
+
+   ![screenshot_index](/room_owasp/screenshots/day09/index.png?raw=true)
+
+   I did a google search of **CSE bookstore exploit** and found the following [exploit-db](https://www.exploit-db.com/exploits/47887) page.
+
+   ![screenshot_exploit-db](/room_owasp/screenshots/day09/exploit-db.png?raw=true)
+
+   After downloading the exploit script, I tried running it, using the website's url as parameter, since that was what the script asked. After it ran successfully, the script gave me the option to launch a reverse shell in the command line. From this point, I easily found the number of characters are in */etc/passwd*
+
+   ![screenshot_shell](/room_owasp/screenshots/day09/shell.png?raw=true)
+
+   > 1611
+
 ### Day 10: Insufficient Logging & Monitoring
