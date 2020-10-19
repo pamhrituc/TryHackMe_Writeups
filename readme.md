@@ -5,6 +5,7 @@ So far, it contains the writeups for the following rooms:
 - [Nmap](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/Nmap.md)
 - [Vulnversity](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/Vulnversity.md)
 - [Metasploit](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/Metasploit.md)
+- [Basic Pentesting](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/BasicPentesting.md)
 - [Advent of Cyber](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/2019AdventOfCyber.md) [WIP]
 - [OWASP Top 10](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/OWASP.md) [WIP]
 - [Hydra](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/Hydra.md)
@@ -12,7 +13,6 @@ So far, it contains the writeups for the following rooms:
 
 Coming up:
 - Blue
-- Basic Pentesting
 - Web Fundamentals
 - Kenobi
 - Mr Robot CTF
