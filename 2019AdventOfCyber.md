@@ -439,7 +439,7 @@ I used the `cat -n naughty_list.txt | grep 148` command to find who is on line 1
 
 1. A web server is running on the target. What is the hidden directory which the website lives on?
 
-   First things first, nmap scan the target. The first command I used was `nmap -sV 10.10.24.100`, but it seemed the target was blocking the ping probes, so I used the -Pn flag (`nmap -Pn -sV 10.10.24.100`) [Scan results]()
+   First things first, nmap scan the target. The first command I used was `nmap -sV 10.10.24.100`, but it seemed the target was blocking the ping probes, so I used the -Pn flag (`nmap -Pn -sV 10.10.24.100`) [Scan results](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/2019AdventOfCyber/nmap_scan_results/day13_accumulate.log)
 
    According to the scan results, we're dealing with a webserver (http runs on port 80), so let's scan using gobuster (`gobuster dir -u http://10.10.24.100 -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt`). Now, we just wait for the results.
 
