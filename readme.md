@@ -7,7 +7,7 @@ So far, it contains the writeups for the following rooms:
 - [Metasploit](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/Metasploit.md)
 - [Basic Pentesting](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/BasicPentesting.md)
 - [Advent of Cyber](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/2019AdventOfCyber.md) [WIP]
-- [OWASP Top 10](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/OWASP.md) [WIP]
+- [OWASP Top 10](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/OWASP.md)
 - [Hydra](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/Hydra.md)
 - [Crack the hash](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/CrackTheHash.md)
 

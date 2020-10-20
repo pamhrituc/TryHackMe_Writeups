@@ -458,3 +458,13 @@ Machine IP: 10.10.103.151
    > 1611
 
 ### Day 10: Insufficient Logging & Monitoring
+
+Simply analyze the given [log file](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/room_owasp/day10/login-logs.txt) to answer the following two questions.
+
+1. What IP address is the attacker using?
+
+   > 49.99.13.16
+
+2. What kind of attack is being carried out?
+
+   > Brute Force
