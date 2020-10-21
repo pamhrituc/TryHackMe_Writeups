@@ -8,6 +8,7 @@ So far, it contains the writeups for the following rooms:
 - [Basic Pentesting](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/BasicPentesting.md)
 - [Advent of Cyber](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/2019AdventOfCyber.md)
 - [OWASP Top 10](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/OWASP.md)
+- [OhSINT](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/OhSINT.md)
 - [Hydra](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/Hydra.md)
 - [Crack the hash](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/CrackTheHash.md)
 
@@ -16,7 +17,6 @@ Coming up:
 - Web Fundamentals
 - Kenobi
 - Mr Robot CTF
-- OhSINT
 - tmux
 - CC: Pen Testing
 - Introductory Networking
