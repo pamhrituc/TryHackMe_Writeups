@@ -725,7 +725,34 @@ Machine IP: 10.10.249.7
    > THM{SHELLS_IN_MY_EGGNOG}
 
 ### Day 24: Elf Stalk
-### Day 25: Challenge-less
+
+Machine IP: 10.10.171.70
+
+1. Find the password in the database.
+
+   First things first, I scanned the machine using nmap (`nmap -sV -p- 10.10.171.70`). [Scan results](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/2019AdventOfCyber/nmap_scan_results/day24_elf_stalk.log)
+
+   According to the scan results, the machine is using Elasticsearch 6.4.2 on port 9200. After doing a little searching, I found that Elasticsearch is a NoSQL database and the way to go through its content is by appending `/_search?q=<query>` to the url (*http://10.10.171.70:9200/*). Because we're looking for the password in the database, I appended `_search?q=password` to the url and badabing badaboom, I got what I was looking for.
+
+   ![screenshot_password](/2019AdventOfCyber/screenshots/day24/password.png?raw=true)
+
+   > 9Qs58Ol3AXkMWLxiEyUyyf
+
+2. Read the contents of the */root.txt* file.
+
+   Another open port found in the nmap scan is port 5601, running Kibana 6.4.2.
+
+   ![screenshot_kibana](/2019AdventOfCyber/screenshots/day24/kibana.png?raw=true)
+
+   After searching to see if there is a public exploit of this version of Kibana, I found [this github](https://github.com/mpgn/CVE-2018-17246) which explained how to exploit the machine.
+
+   So, I appended the payload to the url (10.10.171.70:5601/api/console/api_server?sense_version=@@SENSE_VERSION&apis=../../../../../../.../../../../root.txt) and waited. The website hangs (stuck in a forever loading loop), which is where port 8000 came to save ito day. Upon accessing *http://10.10.171.70:8000*, I found a single file there named *kibana-log.txt*. After going through the contents of the file (mainly the end of the file), I found the contents of */root.txt* of *Reference Error: ?????????? is not defined*, meaning that the website has tried to run the content of the file as Javascript code and failed.
+
+   ![screenshot_log](/2019AdventOfCyber/screenshots/day24/log.png?raw=true)
+
+   > someELKfun
+
+### Day 25: 2. Challenge-less
 
 1. Complete another room on TryHackMe.
 

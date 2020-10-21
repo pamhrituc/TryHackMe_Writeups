@@ -1,0 +1,55 @@
+# Nmap 7.80 scan initiated Wed Oct 21 17:07:41 2020 as: nmap -sV -p- -oN day24_elf_stalk.log 10.10.171.70
+Nmap scan report for 10.10.171.70
+Host is up (0.22s latency).
+Not shown: 65529 closed ports
+PORT     STATE SERVICE   VERSION
+22/tcp   open  ssh       OpenSSH 7.4 (protocol 2.0)
+111/tcp  open  rpcbind   2-4 (RPC #100000)
+5601/tcp open  esmagent?
+8000/tcp open  http      SimpleHTTPServer 0.6 (Python 3.7.4)
+9200/tcp open  http      Elasticsearch REST API 6.4.2 (name: sn6hfBl; cluster: elasticsearch; Lucene 7.4.0)
+9300/tcp open  vrace?
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port5601-TCP:V=7.80%I=7%D=10/21%Time=5F90447F%P=x86_64-pc-linux-gnu%r(G
+SF:etRequest,1D3,"HTTP/1\.1\x20200\x20OK\r\nkbn-name:\x20kibana\r\nkbn-xpa
+SF:ck-sig:\x205a29ca259924bec4872ad69d3677ec71\r\ncache-control:\x20no-cac
+SF:he\r\ncontent-type:\x20text/html;\x20charset=utf-8\r\ncontent-length:\x
+SF:20217\r\naccept-ranges:\x20bytes\r\nDate:\x20Wed,\x2021\x20Oct\x202020\
+SF:x2014:24:01\x20GMT\r\nConnection:\x20close\r\n\r\n<script>var\x20hashRo
+SF:ute\x20=\x20'/app/kibana';\nvar\x20defaultRoute\x20=\x20'/app/kibana';\
+SF:n\nvar\x20hash\x20=\x20window\.location\.hash;\nif\x20\(hash\.length\)\
+SF:x20{\n\x20\x20window\.location\x20=\x20hashRoute\x20\+\x20hash;\n}\x20e
+SF:lse\x20{\n\x20\x20window\.location\x20=\x20defaultRoute;\n}</script>")%
+SF:r(HTTPOptions,117,"HTTP/1\.1\x20404\x20Not\x20Found\r\nkbn-name:\x20kib
+SF:ana\r\nkbn-xpack-sig:\x205a29ca259924bec4872ad69d3677ec71\r\ncontent-ty
+SF:pe:\x20application/json;\x20charset=utf-8\r\ncache-control:\x20no-cache
+SF:\r\ncontent-length:\x2038\r\nDate:\x20Wed,\x2021\x20Oct\x202020\x2014:2
+SF:4:01\x20GMT\r\nConnection:\x20close\r\n\r\n{\"statusCode\":404,\"error\
+SF:":\"Not\x20Found\"}")%r(RTSPRequest,1C,"HTTP/1\.1\x20400\x20Bad\x20Requ
+SF:est\r\n\r\n")%r(RPCCheck,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n
+SF:")%r(DNSVersionBindReqTCP,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\
+SF:n")%r(DNSStatusRequestTCP,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\
+SF:n")%r(Help,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%r(SSLSessio
+SF:nReq,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%r(TerminalServerC
+SF:ookie,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%r(TLSSessionReq,
+SF:1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%r(Kerberos,1C,"HTTP/1\
+SF:.1\x20400\x20Bad\x20Request\r\n\r\n")%r(SMBProgNeg,1C,"HTTP/1\.1\x20400
+SF:\x20Bad\x20Request\r\n\r\n")%r(X11Probe,1C,"HTTP/1\.1\x20400\x20Bad\x20
+SF:Request\r\n\r\n")%r(FourOhFourRequest,12D,"HTTP/1\.1\x20404\x20Not\x20F
+SF:ound\r\nkbn-name:\x20kibana\r\nkbn-xpack-sig:\x205a29ca259924bec4872ad6
+SF:9d3677ec71\r\ncontent-type:\x20application/json;\x20charset=utf-8\r\nca
+SF:che-control:\x20no-cache\r\ncontent-length:\x2060\r\nDate:\x20Wed,\x202
+SF:1\x20Oct\x202020\x2014:24:07\x20GMT\r\nConnection:\x20close\r\n\r\n{\"s
+SF:tatusCode\":404,\"error\":\"Not\x20Found\",\"message\":\"Not\x20Found\"
+SF:}");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port9300-TCP:V=7.80%I=7%D=10/21%Time=5F904480%P=x86_64-pc-linux-gnu%r(G
+SF:etRequest,18,"This\x20is\x20not\x20an\x20HTTP\x20port")%r(HTTPOptions,1
+SF:8,"This\x20is\x20not\x20an\x20HTTP\x20port")%r(RTSPRequest,18,"This\x20
+SF:is\x20not\x20an\x20HTTP\x20port")%r(FourOhFourRequest,18,"This\x20is\x2
+SF:0not\x20an\x20HTTP\x20port")%r(SIPOptions,18,"This\x20is\x20not\x20an\x
+SF:20HTTP\x20port");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Oct 21 17:24:14 2020 -- 1 IP address (1 host up) scanned in 993.12 seconds
