@@ -38,11 +38,11 @@ Samba is based on the common client/server protocol of Server Message Block (SMB
 
    SMB has two ports, 445 and 139.
 
-   ![ports](/room_kenobi/ports.pbg?raw=true)
+   ![ports](/room_kenobi/ports.png?raw=true)
 
    Using the nmap command above, how many shared have been found?
 
-   [Scan results](https://github/pamhrituc/TryHackMe_Writeups/blob/master/room_kenobi/nmap_scans/smb_scan.log)
+   [Scan results](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/room_kenobi/nmap_scans/smb_scan.log)
 
    > 3
 
