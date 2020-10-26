@@ -1,0 +1,20 @@
+# Nmap 7.80 scan initiated Mon Oct 26 12:54:31 2020 as: nmap -sV -p- -oN scan_results.log 10.10.220.207
+Nmap scan report for 10.10.220.207
+Host is up (0.22s latency).
+Not shown: 65524 closed ports
+PORT      STATE SERVICE     VERSION
+21/tcp    open  ftp         ProFTPD 1.3.5
+22/tcp    open  ssh         OpenSSH 7.2p2 Ubuntu 4ubuntu2.7 (Ubuntu Linux; protocol 2.0)
+80/tcp    open  http        Apache httpd 2.4.18 ((Ubuntu))
+111/tcp   open  rpcbind     2-4 (RPC #100000)
+139/tcp   open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp   open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+2049/tcp  open  nfs_acl     2-3 (RPC #100227)
+34737/tcp open  mountd      1-3 (RPC #100005)
+39651/tcp open  nlockmgr    1-4 (RPC #100021)
+48245/tcp open  mountd      1-3 (RPC #100005)
+57451/tcp open  mountd      1-3 (RPC #100005)
+Service Info: Host: KENOBI; OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Oct 26 13:13:09 2020 -- 1 IP address (1 host up) scanned in 1117.56 seconds

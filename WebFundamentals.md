@@ -27,6 +27,7 @@ The IP address uniquely identifies each internet connected device, like a web se
 Once the browser knows the server's IP address, it can ask the server for the web page. This is done with a HTTP GET request. GET is an example of a HTTP verb, which are the different types of request (More on these later). The server will respond to the GET request with the web page content. If the web page is loading extra resources, like JavaScript, images, or CSS files, those will be retrieved in separate GET requests.
 
 ![screenshot_requests](/room_web_fundamentals/requests.png?raw=true)
+
 Wireshark showing the HTTP requests that load a website (neverssl.com)
 
 For most websites now, these requests will use HTTPS. HTTPS is a secure (encrypted) version of HTTP, it works in more or less the same way. This uses TLS 1.3 (normally) encryption in order to communicate without:
