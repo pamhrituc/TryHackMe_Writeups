@@ -10,6 +10,7 @@ So far, it contains the writeups for the following rooms:
 - [OWASP Top 10](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/OWASP.md)
 - [Web Fundamentals](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/WebFundamentals.md)
 - [Kenobi](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/Kenobi.md)
+- [CC: Pen Testing](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/CCPenTesting.md)
 - [OhSINT](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/OhSINT.md)
 - [Hydra](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/Hydra.md)
 - [Crack the hash](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/CrackTheHash.md)
@@ -18,7 +19,6 @@ Coming up:
 - Blue
 - Mr Robot CTF
 - tmux
-- CC: Pen Testing
 - Introductory Networking
 - Simple CTF
 - The Cod Caper
