@@ -118,11 +118,11 @@ Rust's 3rd largest goal is a strange one. Productivity!
 
 Rust provides all of the tools developers need to be productive, shipped with the platform itself.
 
-*Note: The below list is read as:
+*Note: The below list is read as:*
 
-- Tool
+*- Tool*
 
-Explanation of the above tool.*
+*Explanation of the above tool.*
 
 Some of these include:
 
