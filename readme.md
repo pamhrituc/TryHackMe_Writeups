@@ -3,6 +3,7 @@ This repository contains just some of the things I've learned using [TryHackMe](
 
 So far, it contains the writeups for the following rooms:
 - [Crack the hash](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/writeups/CrackTheHash.md)
+- [c4ptur3-th3-fl4g](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/writeups/c4ptur3th3fl4g.md)
 - [Nmap](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/writeups/Nmap.md)
 - [OhSINT](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/writeups/OhSINT.md)
 - [Basic Pentesting](https://github.com/pamhrituc/TryHackMe_Writeups/blob/master/writeups/BasicPentesting.md)

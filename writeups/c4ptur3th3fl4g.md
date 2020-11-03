@@ -94,7 +94,7 @@ Steganography is the practice of concealing a file, message, image, or video wit
 
    Using `steghide`, information from the stegofile was extracted the stegofile (empty passphrase) to a text file, which contained the flag.
 
-   ![screenshot_steghide](/room_c4ptur3_th3_fl4g/screenshots/steghide.png?rraw=true)
+   ![screenshot_steghide](/room_c4ptur3_th3_fl4g/screenshots/steghide.png?raw=true)
 
    > SpachettiSteg
 
@@ -104,7 +104,7 @@ Security through obscurity is the reliance in security engineering on the secrec
 
 This task was simple, since the two flags could be found using the `strings` command.
 
-![screenshot_strings](/room_c4ptur3_th3_fl4g/strings.png?raw=true)
+![screenshot_strings](/room_c4ptur3_th3_fl4g/screenshots/strings.png?raw=true)
 
 1. Download and get 'inside' the file. What is the first filename & extension?
 
